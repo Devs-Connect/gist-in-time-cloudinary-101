@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {AdvancedImage} from '@cloudinary/react';
+import {Cloudinary} from "@cloudinary/url-gen";
 
-function App() {
+import {thumbnail} from "@cloudinary/url-gen/actions/resize";
+
+const App = () => {
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: 'dqzlxcllu'
+    }
+  }); 
+
+  const rawImage = cld.image('v1659981165/ACM-1995_5009_0003-r1-000001_i4qicg.jpg');
+  const smallerImage = cld.image('v1659981165/ACM-1995_5009_0003-r1-000001_i4qicg.jpg');
+
+  smallerImage
+  .resize(thumbnail().width(500).height(500));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AdvancedImage cldImg={rawImage} />
+      <AdvancedImage cldImg={smallerImage} />
     </div>
-  );
-}
+  )
+};
 
 export default App;
