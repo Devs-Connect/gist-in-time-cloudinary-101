@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+	<title>Plain Old HTML "Hello World" of Cloudinary</title>
+	<style>
+		body {
+			background-color: #DDDDDD;
+		}
+		
+		h1 {
+			color: #A24336;
+		}
+		
+		p {
+			color: #A24336;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hello World Demo</h1>
+	<img src="https://res.cloudinary.com/dqzlxcllu/image/upload/c_fill,h_500,w_500/v1660004846/hello_world_nasa_earth_day_mvfbdu.jpg" alt="Earth during the day, with North and South America visible (the size of this version is 500 pixels x 500 pixels)" />
+	<p><strong>'c_fill,h_500,w_500'</strong>: The section of the URL between 'upload' and 'v1660004846' transforms our image. 'c_fill' resizes our image so that the height is 500 pixels and the width is also 500 pixels. It resizes it before the image is downloaded so the download is much faster than if we took the original image (8192 pixels width and height) and resized it in our browser.</p>	
+	<p><a href="https://res.cloudinary.com/dqzlxcllu/image/upload/v1660004846/hello_world_nasa_earth_day_mvfbdu.jpg">You can visit that full image here</a> to see how much bigger it is. Please note: that's the same URL as our "hello world" version with the '/c_fill,h_500,w_500' segment removed.</p>	
+</body>
+</html>
